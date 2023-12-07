@@ -1,47 +1,34 @@
 package repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 
 import model.Funcionario;
+import repository.base.AbstractCrudRepository;
 
-@Stateful
-public class FuncionarioRepository {
+@Stateless
+public class FuncionarioRepository extends AbstractCrudRepository<Funcionario>{
 	
-	private static List<Funcionario> listaFuncionarios = new ArrayList<>();
-
 	public List<Funcionario> listar() {
-		return listaFuncionarios;
+		return super.pesquisarTodos();
 	}
 
 	public Funcionario consultar(int id) {
-		for(Funcionario funcionario: listaFuncionarios) {
-			if(funcionario.getId().intValue() == id) {
-				return funcionario;
-			}
-		}
-		return null;
+		return super.consultar(id);
 	}
 
 	public int cadastrar(Funcionario novo) {
-		int maxId = listaFuncionarios.size() + 1;
-		novo.setId(maxId);
-		listaFuncionarios.add(novo);
+		super.inserir(novo);
 		return novo.getId();
 	}
 
-	public Funcionario atualizar(Funcionario funcionario) {	
-		listaFuncionarios.add(funcionario);		
+	public Funcionario atualizarFuncionario(Funcionario funcionario) {	
+		super.atualizar(funcionario);
 		return funcionario;
 	}
 	
-	public void remover(Funcionario funcionario) throws Exception {
-		Funcionario atual = this.consultar(funcionario.getId());
-		if(atual == null)
-			throw new Exception("Funcionário não encontrado");
-		
-		listaFuncionarios.remove(atual);
+	public void removerFuncionario(Funcionario funcionario) {
+		super.remover(funcionario);
 	}
 }

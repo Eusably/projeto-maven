@@ -1,3 +1,5 @@
+package teste;
+
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class FuncionarioTest {
 		novo.setCargo("Desenvolvedor");
 		novo.setIdade("18 anos");
 		novo.setDataAdmissao(new Date());
-		Funcionario atualizado = this.funcionarioRepository.atualizar(novo);
+		Funcionario atualizado = this.funcionarioRepository.atualizarFuncionario(novo);
 		System.out.println(this.gson.toJson(atualizado));
 		Assert.assertTrue(atualizado != null);
 	}
@@ -59,7 +61,7 @@ public class FuncionarioTest {
 		this.cadastrar();
 		Funcionario funcionario = new Funcionario();
 		funcionario.setId(1);
-		this.funcionarioRepository.remover(funcionario);	
+		this.funcionarioRepository.removerFuncionario(funcionario);	
 	}
 
 }

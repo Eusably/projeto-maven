@@ -42,8 +42,8 @@ public class FuncionarioService {
 	@PUT
 	public Response atualizar(Funcionario funcionario) {
 		try {
-			this.funcionarioRepository.remover(funcionario);
-			return Response.ok(this.funcionarioRepository.atualizar(funcionario)).build();
+			this.funcionarioRepository.removerFuncionario(funcionario);
+			return Response.ok(this.funcionarioRepository.atualizarFuncionario(funcionario)).build();
 		} catch (Exception e) {
 			return Response.serverError().entity(e.getMessage()).build();
 		}
@@ -52,7 +52,7 @@ public class FuncionarioService {
 	@DELETE
 	public Response remover(Funcionario funcionario) {
 		try {
-			this.funcionarioRepository.remover(funcionario);
+			this.funcionarioRepository.removerFuncionario(funcionario);
 			return Response.ok().build();
 		} catch (Exception e) {
 			return Response.serverError().entity(e.getMessage()).build();
