@@ -19,9 +19,6 @@
 		<version.javaee-api>8.0</version.javaee-api>
 		<version.tomee>8.0.0-M2</version.tomee>
 		<version.cxf>3.2.7</version.cxf>
-		<version.glassfish>4.0</version.glassfish>
-		<version.arquillian>1.0.0.Final</version.arquillian>
-		<version.arquillian-glassfish-embedded>1.0.0.CR4</version.arquillian-glassfish-embedded>
 	</properties>
 
 	<dependencies>
@@ -74,52 +71,10 @@
 		</dependency>
 
 		<!-- para testes unitários -->
-		<!-- https://mvnrepository.com/artifact/org.jboss.weld/weld-junit5 -->
-		<dependency>
-			<groupId>org.jboss.weld</groupId>
-			<artifactId>weld-junit5</artifactId>
-			<version>4.0.0.Final</version>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.openejb/openejb-junit -->
-		<dependency>
-			<groupId>org.apache.openejb</groupId>
-			<artifactId>openejb-junit</artifactId>
-			<version>4.7.5</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.10.0</version>
-			<scope>test</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.jboss.arquillian.junit</groupId>
-			<artifactId>arquillian-junit-container</artifactId>
-			<version>${version.arquillian}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.jboss.arquillian.container</groupId>
-			<artifactId>arquillian-glassfish-embedded-3.1</artifactId>
-			<version>${version.arquillian-glassfish-embedded}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish.main.extras</groupId>
-			<artifactId>glassfish-embedded-all</artifactId>
-			<version>${version.glassfish}</version>
 			<scope>test</scope>
 		</dependency>
 

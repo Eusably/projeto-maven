@@ -6,7 +6,6 @@
 		<persistence-unit name="primary">
             <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
             <jta-data-source>Eusably</jta-data-source>
-            <non-jta-data-source>EusablyUnmanaged</non-jta-data-source>
             <properties>
 	            <property name="hibernate.show_sql" value="true" />
 	            <property name="hibernate.id.new_generator_mappings" value="false"/>
